@@ -3,7 +3,7 @@ galaxy_info:
   description: Add OpenStack client configuration.
   company: StackHPC Ltd
 
-  issue_tracker_url: http://example.com/issue/tracker
+  issue_tracker_url: https://github.com/stackhpc/ansible-role-os-config/issues
 
   license: Apache2
 
