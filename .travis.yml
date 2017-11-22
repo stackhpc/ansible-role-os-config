@@ -22,7 +22,7 @@ install:
   - printf '[defaults]\nroles_path=../' >ansible.cfg
 
   # Compensate for repo name being different to the role
-  - ln -s ../ansible-role-os-config ../os-config
+  - ln -s ansible-role-os-config/ ../os-config
 
 script:
   # Basic role syntax check
