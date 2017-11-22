@@ -1,2 +1,11 @@
 ---
-# defaults file for os-config
+os_config_content: |
+    ---
+    clouds:
+      myprivateclound:
+        auth:
+          auth_url: http://openstack.example.com:5000
+          project_name: p3
+          username: user
+          password: secretpassword
+        region: RegionOne

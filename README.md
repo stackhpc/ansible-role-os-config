@@ -14,7 +14,8 @@ No requirements beyond installing Ansible.
 Role Variables
 --------------
 
-TODO
+`os_config_content` is a string that is written out into the config file.
+Its often best setting that as an inline vault variable.
 
 Dependencies
 ------------

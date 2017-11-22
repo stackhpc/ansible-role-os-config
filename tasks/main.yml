@@ -1,2 +1,14 @@
 ---
-# tasks file for os-config
+- name: Create OpenStack config dir
+  file:
+    dest: /etc/openstack
+    owner: root
+    group: root
+    state: directory
+- name: Write OpenStack cloud config
+  copy:
+    dest: /etc/openstack/clouds.yaml
+    content: "{{ os_config_content }}"
+    owner: root
+    group: root
+    mode: 0600
