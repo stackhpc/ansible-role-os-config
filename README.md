@@ -28,8 +28,19 @@ Example Playbook
 Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
 
     - hosts: servers
+      vars:
+        my_cloud_config: |
+          ---
+          clouds:
+            myprivateclound:
+              auth:
+                auth_url: http://openstack.example.com:5000
+                project_name: p3
+                username: user
+                password: secretpassword
+              region: RegionOne
       roles:
-         - { role: stackhpc.os-config }
+        - { role: stackhpc.os-config, os_config_content: "{{my_cloud_config}}" }
 
 License
 -------
