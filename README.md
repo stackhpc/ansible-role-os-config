@@ -25,9 +25,10 @@ There are no requirements for any other Ansible roles.
 Example Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+While you probably want to use and inline vault variable, here is a nice
+example of using this playbook:
 
-    - hosts: servers
+    - hosts: all
       vars:
         my_cloud_config: |
           ---
@@ -40,7 +41,7 @@ Including an example of how to use your role (for instance, with variables passe
                 password: secretpassword
               region: RegionOne
       roles:
-        - { role: stackhpc.os-config, os_config_content: "{{my_cloud_config}}" }
+        - { role: stackhpc.os-config, os_config_content: "{{ my_cloud_config }}" }
 
 License
 -------
