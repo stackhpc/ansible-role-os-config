@@ -1,5 +1,5 @@
-os-config
-=========
+stackhpc.os-config
+==================
 
 [![Build Status](https://www.travis-ci.org/stackhpc/ansible-role-os-config.svg?branch=master)](https://www.travis-ci.org/stackhpc/ansible-role-os-config)
 
@@ -26,7 +26,7 @@ Example Playbook
 ----------------
 
 While you probably want to use and inline vault variable, here is a nice
-example of using this playbook:
+example of using this role in a playbook:
 
     - hosts: all
       vars:
