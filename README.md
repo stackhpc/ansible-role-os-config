@@ -28,12 +28,13 @@ Example Playbook
 While you probably want to use and inline vault variable, here is a nice
 example of using this role in a playbook:
 
+    ---
     - hosts: all
       vars:
         my_cloud_config: |
           ---
           clouds:
-            myprivateclound:
+            mycloud:
               auth:
                 auth_url: http://openstack.example.com:5000
                 project_name: p3
@@ -42,6 +43,21 @@ example of using this role in a playbook:
               region: RegionOne
       roles:
         - { role: stackhpc.os-config, os_config_content: "{{ my_cloud_config }}" }
+
+An easy way to this example is:
+
+.. code-block::
+
+    sudo yum install python-virtualenv libselinux-python
+
+    virtualenv .venv --system-site-packages
+    . .venv/bin/activate
+    pip install -U pip
+    pip install -U ansible
+
+    ansible-galaxy install stackhpc.os-config
+
+    ansible-playbook -i "localhost," -c local test.yml
 
 License
 -------
