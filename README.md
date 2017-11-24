@@ -46,8 +46,6 @@ example of using this role in a playbook:
 
 An easy way to this example is:
 
-.. code-block::
-
     sudo yum install python-virtualenv libselinux-python
 
     virtualenv .venv --system-site-packages
