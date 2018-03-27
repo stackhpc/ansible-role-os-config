@@ -1,17 +1,15 @@
 ---
 - name: Create OpenStack config dir
   file:
-    dest: /etc/openstack
-    owner: root
-    group: root
+    dest: "{{ os_config_destination }}"
+    owner: "{{ os_config_owner }}"
+    group: "{{ os_config_group }}"
     state: directory
-  become: true
 
 - name: Write OpenStack cloud config
   copy:
-    dest: /etc/openstack/clouds.yaml
     content: "{{ os_config_content }}"
-    owner: root
-    group: root
-    mode: 0600
-  become: true
+    dest: "{{ os_config_destination }}/clouds.yaml"
+    owner: "{{ os_config_owner }}"
+    group: "{{ os_config_group }}"
+    mode: 0660

@@ -17,6 +17,10 @@ Role Variables
 `os_config_content` is a string that is written out into the config file.
 Its often best setting that as an inline vault variable.
 
+`os_config_destination` is the directory where the configuration is written.
+This defaults to the home directory of the ansible user, but another common
+location is "/etc/openstack".
+
 Dependencies
 ------------
 
@@ -31,6 +35,7 @@ example of using this role in a playbook:
     ---
     - hosts: all
       vars:
+        ansible_become: yes
         my_cloud_config: |
           ---
           clouds:
@@ -42,7 +47,11 @@ example of using this role in a playbook:
                 password: secretpassword
               region: RegionOne
       roles:
-        - { role: stackhpc.os-config, os_config_content: "{{ my_cloud_config }}" }
+        - role: stackhpc.os-config
+          os_config_content: "{{ my_cloud_config }}"
+          os_config_destination: "/etc/openstack"
+          os_config_owner: root
+          os_config_group: root
 
 An easy way to this example is:
 
